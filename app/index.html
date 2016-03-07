@@ -11,7 +11,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/skeleton/css/skeleton.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -25,30 +25,65 @@
   </head>
   <body>
     
-    <div class="container">
-      <br><br>
-      <div class="ipreo-login row">
-        <div class="four columns">&nbsp;</div>
-        <div class="four columns">
-          <form>
-            <div class="row">
-              <label for="exampleEmailInput">Your email</label>
-              <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput">
-            </div>
-            <div class="row">              
-              <label for="exampleRecipientInput">Password</label>
-              <input class="u-full-width" type="password" placeholder="********" id="exampleEmailInput">
-            </div> 
-            <br>           
-            <input class="button-primary u-full-width" type="submit" value="Sign in">
-          </form>
-        </div>
-        <div class="four columns"></div>
-      </div>
-    </div>
+    <div class='container page-{page} main-content'>
 
+        <div class="row" ng-show="model.errorMessage" ng-cloak>
+            <div class="col-md-12 col-sm-12">
+                <div class="alert alert-danger">
+                    <strong>Error:</strong>
+                    {{model.errorMessage}}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-offset-4 col-md-4" ng-show="model.loginUrl">
+                <h4 class="text-center card-heading">Sign in to continue to Ipreo</h4>
+                <br />
+                <div class="panel panel-default card card-login shadow-card">
+                    <div class="panel-body">
+                        <form name="form" method="post" id="dd-signin-form" action="">
+                            <anti-forgery-token token="model.antiForgery"></anti-forgery-token>
+                            <div class="form-group">
+                                <label for="username"><br />Ipreo ID</label>
+                                <input required name="username" autofocus id="username" type="text" class="form-control" ng-model="model.username" maxlength="100">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input required id="password" name="password" type="password" class="form-control" ng-model="model.password" maxlength="100" autocomplete="off">
+                            </div>
+                            <div class="button-group form-group">
+                                <button class="btn btn-primary width-100p button-login">Sign in</button>
+                            </div>
+                            <br />
+                            <div class="small">
+                                <a href="/public/forgotten_password.cfm">Forgot ID/Password?</a>
+                            </div>
+                        </form>
+                        <br />
+                        <small>Use of this site constitutes your acceptance of the terms of the Ipreo's Internet <a href="/SiteUserAgreement">Site User Agreement</a></small>
+
+                    </div>
+                </div>
+                <br />
+                <div class="text-center footer-custom-mini">
+                    <small class="copyright">
+                        &copy; <span class="currentYear"></span>
+                        Ipreo. All rights reserved
+                    </small>
+                    <small class="pp-ua">
+                        &nbsp;&nbsp;
+                        <a href="/PrivacyPolicy">Privacy Policy</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     

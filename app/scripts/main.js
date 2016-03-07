@@ -1,1 +1,1 @@
-console.log('\'Allo \'Allo!');
+$('.currentYear').append(new Date().getFullYear());

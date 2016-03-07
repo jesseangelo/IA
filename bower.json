@@ -2,7 +2,7 @@
   "name": "ia",
   "private": true,
   "dependencies": {
-    "skeleton": "~2.0.4"
+    "bootstrap": "~3.0.0"
   },
   "devDependencies": {
     "chai": "~3.5.0",
