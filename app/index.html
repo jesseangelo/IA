@@ -24,9 +24,24 @@
     <!-- endbuild -->
   </head>
   <body>
+    <div class="nav navbar-fixed-top">
+      <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styles <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Bootstrap</a></li>
+            <li><a href="#">BDA</a></li>
+            <li><a href="#">T2</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Bootstrap</a></li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
     
     <div class='container page-{page} main-content'>
-
         <div class="row" ng-show="model.errorMessage" ng-cloak>
             <div class="col-md-12 col-sm-12">
                 <div class="alert alert-danger">
@@ -35,6 +50,7 @@
                 </div>
             </div>
         </div>
+        <br><br><br>
 
         <div class="row">
             <div class="col-sm-12 col-md-offset-4 col-md-4" ng-show="model.loginUrl">
@@ -52,10 +68,10 @@
                                 <label for="password">Password</label>
                                 <input required id="password" name="password" type="password" class="form-control" ng-model="model.password" maxlength="100" autocomplete="off">
                             </div>
+                             <br />
                             <div class="button-group form-group">
                                 <button class="btn btn-primary width-100p button-login">Sign in</button>
                             </div>
-                            <br />
                             <div class="small">
                                 <a href="/public/forgotten_password.cfm">Forgot ID/Password?</a>
                             </div>
@@ -64,8 +80,7 @@
                         <small>Use of this site constitutes your acceptance of the terms of the Ipreo's Internet <a href="/SiteUserAgreement">Site User Agreement</a></small>
 
                     </div>
-                </div>
-                <br />
+                </div>          
                 <div class="text-center footer-custom-mini">
                     <small class="copyright">
                         &copy; <span class="currentYear"></span>
