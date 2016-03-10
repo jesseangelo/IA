@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body class="ipreo-default">
+  <body class="ipreo-default-style">
         
     <div class='container page-{page} main-content'>
         <div class="row" ng-show="model.errorMessage" ng-cloak>
@@ -33,9 +33,11 @@
         <br>
         <div class="row">
             <div class="col-sm-12 col-md-offset-4 col-md-4" ng-show="model.loginUrl">
-                <h4 class="text-center card-heading">Sign in to continue to Ipreo</h4>
+                <div class="row">
+                    <img src="images/Ipreo_4c_Horiz_OL_Final-Ipreo-logo.gif" class="login-logo"/>
+                </div>
                 <br />
-                <div class="panel panel-default card card-login shadow-card">
+                <div class="panel panel-default card card-login">
                     <div class="panel-body">
                         <form name="form" method="post" id="dd-signin-form" action="">
                             <anti-forgery-token token="model.antiForgery"></anti-forgery-token>
